@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="xiaoshaoYC">
   <meta name="keywords" content="">
-  <title>Hello World - 越过山丘</title>
+  <title>公司实习经历（二） - 越过山丘</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -139,8 +139,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2019-01-20 14:36">
-      2019年1月20日 下午
+    <time datetime="2020-07-28 14:52">
+      2020年7月28日 下午
     </time>
   </div>
 
@@ -150,7 +150,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      737 字
+      983 字
     </span>
   
 
@@ -160,7 +160,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      11
        分钟
     </span>
   
@@ -191,16 +191,65 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>时隔将近一年，学业终于告一段落，是时候重新开始写博客了。之前那个博客关闭是因为老板带着他的服务器跑路了，顺便带走了我所有的博文。不过还好我当时做了备份，真没想到竟能排上用场。</p>
-<p>然后来说说现在这个博客系统。我平时博客写的也不过，如果租一台服务器的话实在显得浪费，所以我决定用Github Pages来搭建这个博客。Github Pages只能展示静态文件，也就意味着Wordpress一类基于PHP的博客系统肯定是不能用了，经过一番搜索，我找到了两个备选目标，<a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>和<a href="Https://hexo.io" target="_blank" rel="noopener">Hexo</a>。经过比较，我选择了比较容易上手的Hexo，以后可能会再写一篇博客比较下它们的优劣。</p>
-<p>这次重新开坑，是为了在多方面提升自己的实力：</p>
-<p>第一，在我这几年的编程学习中，虽然学到了很多东西，但是一直没有系统性的记录下来，久而久之也忘记了。所以我写博客，也是想把这些学过的东西都记录下来，巩固自己的学习成果，同时把一些心得体会分享给他人。</p>
-<p>第二，最近我在学习网页制作，Hexo的主题（Theme）对我来说是一个很好的playground，<em>Talk is cheap. Show me the code.</em> —— Linus Torvalds(Linux操作系统创始人)，光学不练肯定是不能达到效果的。现在我用的Theme是Hexo自带的，以后我打算自己做一个（或者魔改别人的）</p>
-<p>第三，我一直很想学习双拼，写博客是一个练习打字的好机会。虽然打字练习软件也有双拼的练习，但是总的来说还是比较无聊，而且从时间花费来说显然是不划算的。写博客在练习打字的同时还能把自己学习的东西分享给他人，打字这一过程就显得非常有趣了。</p>
-<p>第四，我一直觉得我的语言能力不强，也许是因为我平常不太爱说话吧。写博客也是强迫自己锻炼语言能力，提高自己的交际能力吧</p>
-<p>说完原因，再来谈谈定位。我主要会写自己在编程中踩过的坑和一些感悟（显然我不可能写散文），如果平时看到一些实用的软件，也会推荐给大家。主要面向没有编程经验和编程入门群体（说白了还是我太菜了）</p>
-<p>想说的大概也说完了，2019年希望我能学到更多计算机方面的知识，同时不能一味的“输入”而不“输出”，新的一年我希望能自己独立编写出一款有价值的软件。在这，我也提前祝大家，<strong>新年快乐！</strong></p>
-<p><img src="/images/hello_world.jpg" srcset="/img/loading.gif" alt="越过山丘"></p>
+              <ul>
+<li><a href="/2020/07/28/公司实习经历（一）/" title="上次">上次</a>主要讲了公司里面做什么，这一部分具体讲讲我用<del>（边学边用）</del>的工具们。</li>
+</ul>
+<h2 id="python-amp-django"><a href="#python-amp-django" class="headerlink" title="python &amp; django"></a>python &amp; django</h2><hr>
+<ul>
+<li><p>说起这个，一开始面试的时候领导问我你想用什么语言，我就选了python，结果前几天一看，啊C++忘得差不多了（捂脸）。</p>
+</li>
+<li><p>虽然说了很多次，这边还是再提一下，语言只是一个工具，不同的语言是为了方便解决特定的问题，真正重要的还是<strong>编程思维</strong>。</p>
+</li>
+<li><p>提一下Mixin这个东西，根据维基百科的说法</p>
+</li>
+</ul>
+<blockquote>
+<p>Mixin是面向对象程序设计语言中的类，提供了方法的实现。其他类可以访问mixin类的方法而不必成为其子类。Mixin有时被称作”included”而不是”inherited”。mixin为使用它的class提供额外的功能，但自身却不单独使用（不能单独生成实例对象，属于抽象类）。因为有以上限制，Mixin类通常作为功能模块使用，在需要该功能时“混入”，而且不会使类的关系变得复杂。用户与Mixin不是“is-a”的关系，而是“-able”关系</p>
+<p>Mixin有利于代码复用又避免了多继承的复杂。使用Mixin享有单一继承的单纯性和多重继承的共有性。接口与mixin相同的地方是都可以多继承，不同的地方在于mixin是带实现的。Mixin也可以看作是带实现的interface。这种设计模式实现了依赖反转原则。</p>
+</blockquote>
+<p>作为Mixin的class有点像模块化设计的概念，举个例子：<br><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">verifyView</span><span class="hljs-params">(LoginRequiredMixin, View)</span>:</span>
+    login_url = <span class="hljs-string">'/admin/'</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, request, id)</span>:</span>
+        news = get_object_or_404(SpiderData, pk=id)</code></pre></p>
+<p>这是从我写的网页后端中截取的一段，原来我写的是<code>class verifyView(View):</code>，后来这个界面要判断是否用户是否已经登录，所以我就加上了<code>LoginRequiredMixin</code>，如果用老办法，可以写成<br><pre><code class="hljs python"><span class="hljs-keyword">if</span> request.user.is_authenticated:
+    <span class="hljs-comment"># Do something for authenticated users.</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-comment"># Do something for anonymous users.</span></code></pre></p>
+<p>可以看到用Mixin的方法更加简洁，也增加了可读性</p>
+<ul>
+<li><p>MRO(Method Resolution Order)</p>
+<ul>
+<li>多继承情况下super(),getattr()调用的究竟是哪个？</li>
+<li><a href="https://mozillazg.com/2016/11/python-mro-compute.html" target="_blank" rel="noopener">https://mozillazg.com/2016/11/python-mro-compute.html</a></li>
+<li><a href="https://www.python.org/download/releases/2.3/mro/" target="_blank" rel="noopener">https://www.python.org/download/releases/2.3/mro/</a></li>
+</ul>
+</li>
+<li><p>import 我也是没想到这个东西上还有坑，主要就是相对导入和绝对导入的问题</p>
+<blockquote>
+<p>在没有明确指定包结构的情况下，Python 是根据 <strong>name</strong> 来决定一个模块在包中的结构的，如果是 <strong>main</strong> 则它本身是顶层模块，没有包结构，如果是A.B.C 结构，那么顶层模块是 A。基本上遵循这样的原则：</p>
+<ul>
+<li>如果是绝对导入，一个模块只能导入自身的子模块或和它的顶层模块同级别的模块及其子模块</li>
+<li>如果是相对导入，一个模块必须有包结构且只能导入它的顶层模块内部的模块<br>如果一个模块被直接运行(python myfile.py)，则它自己为顶层模块，不存在层次结构，所以找不到其他的相对路径。 导入执行的话则是(python -m myfile.py)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><hr>
+<ul>
+<li><a href="https://draveness.me/mysql-transaction/" target="_blank" rel="noopener">mysql 事务</a></li>
+<li>这一块没有深入研究，要学习的实在是太多了，目前还只会用mysql</li>
+<li>以后要深入学习mysql的原理，再学下用mongodb, redis</li>
+</ul>
+<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><hr>
+<ul>
+<li>一开始觉得好麻烦，但是一行<code>docker-compose up -d</code>一键部署到生产环境是真的爽</li>
+<li>有一次部署的时候container里的apt报错<code>Temporary failure resolving &#39;deb.debian.org&#39;</code>, 最后解决方法是在docker的配置里设置DNS</li>
+<li>在linux的机器上build的时候要注意运行权限的问题，之前container里的启动脚本报<code>permission denied</code>, 后来<code>chmod +x XXXX.sh</code>解决</li>
+</ul>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><hr>
+<ul>
+<li>往往会出现提交完发现emmmm有个参数没改，于是不得不再加一条提交，时间久了log裂开(捂脸)</li>
+</ul>
 
             </article>
             <hr>
@@ -217,15 +266,15 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/07/28/公司实习经历（一）/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">公司实习经历（一）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
+                    
+                      <a href="/2020/07/28/公司实习经历（一）/">
+                        <span class="hidden-mobile">公司实习经历（一）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </div>
                 </div>
@@ -339,7 +388,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hello World&nbsp;",
+        "公司实习经历（二）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 40,
