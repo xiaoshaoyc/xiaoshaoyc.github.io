@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="xiaoshaoYC">
   <meta name="keywords" content="">
-  <title>公司实习经历（一） - 越过山丘</title>
+  <title>Win10打开Hyper-V对性能的影响 - 越过山丘</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -139,8 +139,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-07-28 13:53">
-      2020年7月28日 下午
+    <time datetime="2020-08-01 15:46">
+      2020年8月1日 下午
     </time>
   </div>
 
@@ -150,7 +150,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      724 字
+      306 字
     </span>
   
 
@@ -160,7 +160,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      2
        分钟
     </span>
   
@@ -191,12 +191,15 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p>又是一年暑假，考虑到一方面宅在家里天天打游戏不好，另一方面受疫情影响国外形势动荡，决定找个实习，提前体验一下程序员的工作节奏，以便今后更好向专业方向发展。</p>
-<p>那么先是想自己在互联网上找一家公司实习，可无奈没有针对大一的实习工作，而且作为一个才学了数据结构（以及计算机原理和离散）的菜鸡，实在是达不到公司的用人标准。 无奈只能委托父母帮忙，于是就来到了苏州海赛人工智能，开始我为期两个月的实习体验。</p>
-<p>初来乍到第一天，作为0工作经验的职场新人，内心极度忐忑不安，感觉自己被大佬环绕(doge)。上班第一天，领导就让我为公司官网上的一个组件编写后端（这其实不太常见，一般公司新入职的话都没什么事情干的，<strong>建议用这段时间观察同事之间是如何交流的，熟悉公司常用的软件</strong>。）</p>
-<p>都说第一印象非常重要，看到边上同事都在努力工作，我也尽力把最好的自己展现出来。上午，写代码！中午午休，写代码！下午，写代码！加班，写代码！于是上班刚满一周我就倒了(doge)。哈哈，所以各位<strong>上班切记要劳逸结合</strong>，该认真的时候认真，该休息的时候休息，别用力过猛把自己累倒了。从另一个方面讲，基本上所有项目都涉及同事之间的合作，你一个人快了，最后还是要等同事进度，在<strong>写代码的同时也要关注同事的进度</strong>，适当摸鱼doge。</p>
-<p>我的实习单位是一个<del>小</del>成长型公司，人员较少，组织也比较松散，员工往往都要身兼数职。比如我是研发，我要自己设计架构，和同事沟通，打包部署，后期维护等等，由于没什么经验，很多软件框架我只能现学现用，花费大量时间，当然对于我来说收获非常大。而据我所知，一般大公司都分工明确，每个人都只要完成自己分内的事以做到效率最大化，emmmm短期应该感觉不错（没那么多麻烦事），一段时间后应该会比较无聊。</p>
-<p>总的来说，实习对今后踏入职场有着莫大的帮助，不仅仅是为了简历，还可以提前了解公司需要什么样的人力资源？现在的科技公司是如何进行软件开发？XXX岗位是否适合我？ 非常建议各位在大学实习获取工作经验。</p>
+              <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>打算在家里电脑安装Docker，就顺便研究了一下Docker在Windows上运行的原理。其实是用Win10自带的Hyper-V新建了一台虚拟机，<code>Dockerd</code>运行在虚拟机上面 (切~~)。</p>
+<p>顺便了解了一下现在主流的虚拟化方案，主要有三个：Vmware, VirtualBox, Hyper-V。<br>Vmware作为最老牌的虚拟机，对老机器兼容比较好，但个人感觉运行效率有点低，而且还要付费。<br>VirtualBox是开源软件，没用过，不做评价。<br>Hyper-V是Microsoft力推的虚拟机软件，Win10专业版自带，运行效率比较高。</p>
+<p>但批评Hyper-V的人也有，有人说Hyper-V会将Host也虚拟化，造成Host性能损失。 ！！！ 这能忍？于是我赶紧测试了一下。</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>根据网络上说法，在CPU方面会造成约4%的性能损失，这我倒是不在意。</p>
+<p>关键在于Hyper-V会造成内存性能下降，以下是测试结果（均进行两次实验）：</p>
+<h4 id="开启Hyper-V"><a href="#开启Hyper-V" class="headerlink" title="开启Hyper-V"></a>开启Hyper-V</h4><p><img src="/images/cachemem-hyper-v-V2019.png" srcset="/img/loading.gif" alt="开启Hyper-V 1"><br><img src="/images/cachemem-hyper-v-V2020.png" srcset="/img/loading.gif" alt="开启Hpyer-V 2"></p>
+<h4 id="关闭Hyper-V"><a href="#关闭Hyper-V" class="headerlink" title="关闭Hyper-V"></a>关闭Hyper-V</h4><p><img src="/images/cachemem-V2020-1.png" srcset="/img/loading.gif" alt="关闭Hyper-V 1"><br><img src="/images/cachemem-V2020-2.png" srcset="/img/loading.gif" alt="关闭Hyper-V 2"></p>
+<p>可以看到开启Hyper-V后确实会对性能造成一定的影响，尤其是L2和L3缓存。</p>
+<p>同时，Vmware不会对系统性能造成影响（废话）<br><img src="/images/cachemem-started-Vmware-V2020.png" srcset="/img/loading.gif" alt="Vmware无影响"></p>
 
             </article>
             <hr>
@@ -213,18 +216,12 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/07/28/公司实习经历（二）/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">公司实习经历（二）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2019/01/20/Hello-World/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2020/07/28/公司实习经历（二）/">
+                        <span class="hidden-mobile">公司实习经历（二）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -341,7 +338,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "公司实习经历（一）&nbsp;",
+        "Win10打开Hyper-V对性能的影响&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 40,
