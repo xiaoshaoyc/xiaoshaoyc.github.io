@@ -16,12 +16,12 @@
   <meta name="author" content="xiaoshaoYC">
   <meta name="keywords" content="">
   
-    <meta name="description" content="上次主要讲了公司里面做什么，这一部分具体讲讲我用（边学边用）的工具们。  python &amp; django  说起这个，一开始面试的时候领导问我你想用什么语言，我就选了python，结果前几天一看，啊C++忘得差不多了（捂脸）。  虽然说了很多次，这边还是再提一下，语言只是一个工具，不同的语言是为了方便解决特定的问题，真正重要的还是编程思维。  提一下Mixin这个东西，根据维基百科的说法">
+    <meta name="description" content="上次主要讲了公司里面做什么，这一部分具体讲讲我用~~（边学边用）~~的工具们。  python &amp; django  说起这个，一开始面试的时候领导问我你想用什么语言，我就选了python，结果前几天一看，啊C++忘得差不多了（捂脸）。  虽然说了很多次，这边还是再提一下，语言只是一个工具，不同的语言是为了方便解决特定的问题，真正重要的还是编程思维。  提一下Mixin这个东西，根据维基百">
 <meta property="og:type" content="article">
 <meta property="og:title" content="公司实习经历（二）">
 <meta property="og:url" content="http://yoursite.com/2020/07/28/%E5%85%AC%E5%8F%B8%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="越过山丘">
-<meta property="og:description" content="上次主要讲了公司里面做什么，这一部分具体讲讲我用（边学边用）的工具们。  python &amp; django  说起这个，一开始面试的时候领导问我你想用什么语言，我就选了python，结果前几天一看，啊C++忘得差不多了（捂脸）。  虽然说了很多次，这边还是再提一下，语言只是一个工具，不同的语言是为了方便解决特定的问题，真正重要的还是编程思维。  提一下Mixin这个东西，根据维基百科的说法">
+<meta property="og:description" content="上次主要讲了公司里面做什么，这一部分具体讲讲我用~~（边学边用）~~的工具们。  python &amp; django  说起这个，一开始面试的时候领导问我你想用什么语言，我就选了python，结果前几天一看，啊C++忘得差不多了（捂脸）。  虽然说了很多次，这边还是再提一下，语言只是一个工具，不同的语言是为了方便解决特定的问题，真正重要的还是编程思维。  提一下Mixin这个东西，根据维基百">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-28T18:52:43.000Z">
 <meta property="article:modified_time" content="2022-09-21T19:52:42.310Z">
@@ -212,7 +212,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.7k 字
+          1.8k 字
         
       </span>
     
@@ -268,7 +268,7 @@
               <div class="markdown-body">
                 
                 <ul>
-<li><a href="/2020/07/28/公司实习经历（一）/" title="上次">上次</a>主要讲了公司里面做什么，这一部分具体讲讲我用<del>（边学边用）</del>的工具们。</li>
+<li><a href="/2020/07/28/%E5%85%AC%E5%8F%B8%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86%EF%BC%88%E4%B8%80%EF%BC%89/" title="公司实习经历（一）">上次</a>主要讲了公司里面做什么，这一部分具体讲讲我用~~（边学边用）~~的工具们。</li>
 </ul>
 <h2 id="python-amp-django"><a href="#python-amp-django" class="headerlink" title="python &amp; django"></a>python &amp; django</h2><hr>
 <ul>
@@ -283,15 +283,17 @@
 <p>Mixin是面向对象程序设计语言中的类，提供了方法的实现。其他类可以访问mixin类的方法而不必成为其子类。Mixin有时被称作”included”而不是”inherited”。mixin为使用它的class提供额外的功能，但自身却不单独使用（不能单独生成实例对象，属于抽象类）。因为有以上限制，Mixin类通常作为功能模块使用，在需要该功能时“混入”，而且不会使类的关系变得复杂。用户与Mixin不是“is-a”的关系，而是“-able”关系</p>
 <p>Mixin有利于代码复用又避免了多继承的复杂。使用Mixin享有单一继承的单纯性和多重继承的共有性。接口与mixin相同的地方是都可以多继承，不同的地方在于mixin是带实现的。Mixin也可以看作是带实现的interface。这种设计模式实现了依赖反转原则。</p>
 </blockquote>
-<p>作为Mixin的class有点像模块化设计的概念，举个例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">verifyView</span><span class="hljs-params">(LoginRequiredMixin, View)</span>:</span><br>    login_url = <span class="hljs-string">'/admin/'</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, request, id)</span>:</span><br>        news = get_object_or_404(SpiderData, pk=id)<br></code></pre></td></tr></table></figure></p>
-<p>这是从我写的网页后端中截取的一段，原来我写的是<code>class verifyView(View):</code>，后来这个界面要判断是否用户是否已经登录，所以我就加上了<code>LoginRequiredMixin</code>，如果用老办法，可以写成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> request.user.is_authenticated:<br>    <span class="hljs-comment"># Do something for authenticated users.</span><br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-comment"># Do something for anonymous users.</span><br></code></pre></td></tr></table></figure></p>
+<p>作为Mixin的class有点像模块化设计的概念，举个例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">verifyView</span>(LoginRequiredMixin, View):<br>    login_url = <span class="hljs-string">&#x27;/admin/&#x27;</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get</span>(<span class="hljs-params">self, request, <span class="hljs-built_in">id</span></span>):<br>        news = get_object_or_404(SpiderData, pk=<span class="hljs-built_in">id</span>)<br></code></pre></td></tr></table></figure>
+<p>这是从我写的网页后端中截取的一段，原来我写的是<code>class verifyView(View):</code>，后来这个界面要判断是否用户是否已经登录，所以我就加上了<code>LoginRequiredMixin</code>，如果用老办法，可以写成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> request.user.is_authenticated:<br>    <span class="hljs-comment"># Do something for authenticated users.</span><br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-comment"># Do something for anonymous users.</span><br></code></pre></td></tr></table></figure>
 <p>可以看到用Mixin的方法更加简洁，也增加了可读性</p>
 <ul>
 <li><p>MRO(Method Resolution Order)</p>
 <ul>
 <li>多继承情况下super(),getattr()调用的究竟是哪个？</li>
-<li><a href="https://mozillazg.com/2016/11/python-mro-compute.html" target="_blank" rel="noopener">https://mozillazg.com/2016/11/python-mro-compute.html</a></li>
-<li><a href="https://www.python.org/download/releases/2.3/mro/" target="_blank" rel="noopener">https://www.python.org/download/releases/2.3/mro/</a></li>
+<li><a target="_blank" rel="noopener" href="https://mozillazg.com/2016/11/python-mro-compute.html">https://mozillazg.com/2016/11/python-mro-compute.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/download/releases/2.3/mro/">https://www.python.org/download/releases/2.3/mro/</a></li>
 </ul>
 </li>
 <li><p>import 我也是没想到这个东西上还有坑，主要就是相对导入和绝对导入的问题</p>
@@ -306,7 +308,7 @@
 </ul>
 <h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><hr>
 <ul>
-<li><a href="https://draveness.me/mysql-transaction/" target="_blank" rel="noopener">mysql 事务</a></li>
+<li><a target="_blank" rel="noopener" href="https://draveness.me/mysql-transaction/">mysql 事务</a></li>
 <li>这一块没有深入研究，要学习的实在是太多了，目前还只会用mysql</li>
 <li>以后要深入学习mysql的原理，再学下用mongodb, redis</li>
 </ul>
