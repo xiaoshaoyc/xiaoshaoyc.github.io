@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="xiaoshaoYC">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="背景周一像往常一样启动电脑，输入密码解锁，一看桌面上一片白。不用说，想必是又掉盘了，我电脑上这块磁盘自从买过来就一直有这个问题，开机有一定几率会检测不到磁盘。S.M.A.R.T.里确实有报警，但是都在阈值以下，我抱着侥幸心理一直没修。可万万没想到，没有一丝预兆，这块硬盘在今天早上彻底不行了。无论我重启电脑多少次，始终读不到硬盘，就连BIOS里也检测不到这块硬盘。好在我一个半月前把磁盘全盘备份了一遍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="希捷ST2000DM001硬盘维修">
+<meta property="og:url" content="http://yoursite.com/2020/08/19/%E5%B8%8C%E6%8D%B7ST2000DM001%E7%A1%AC%E7%9B%98%E7%BB%B4%E4%BF%AE/index.html">
+<meta property="og:site_name" content="越过山丘">
+<meta property="og:description" content="背景周一像往常一样启动电脑，输入密码解锁，一看桌面上一片白。不用说，想必是又掉盘了，我电脑上这块磁盘自从买过来就一直有这个问题，开机有一定几率会检测不到磁盘。S.M.A.R.T.里确实有报警，但是都在阈值以下，我抱着侥幸心理一直没修。可万万没想到，没有一丝预兆，这块硬盘在今天早上彻底不行了。无论我重启电脑多少次，始终读不到硬盘，就连BIOS里也检测不到这块硬盘。好在我一个半月前把磁盘全盘备份了一遍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/HDD_touchpoint_front.jpg">
+<meta property="og:image" content="http://yoursite.com/images/HDD_touchpoint_back.jpg">
+<meta property="article:published_time" content="2020-08-20T02:20:53.000Z">
+<meta property="article:modified_time" content="2022-09-21T19:52:42.310Z">
+<meta property="article:author" content="xiaoshaoYC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://yoursite.com/images/HDD_touchpoint_front.jpg">
+  
+  
+  
+  <title>希捷ST2000DM001硬盘维修 - 越过山丘</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"tajs":null},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="希捷ST2000DM001硬盘维修"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-08-19 22:20" pubdate>
+          2020年8月19日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">希捷ST2000DM001硬盘维修</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>周一像往常一样启动电脑，输入密码解锁，一看桌面上一片白。不用说，想必是又掉盘了，我电脑上这块磁盘自从买过来就一直有这个问题，开机有一定几率会检测不到磁盘。<code>S.M.A.R.T.</code>里确实有报警，但是都在阈值以下，我抱着侥幸心理一直没修。可万万没想到，没有一丝预兆，这块硬盘在今天早上彻底不行了。无论我重启电脑多少次，始终读不到硬盘，就连BIOS里也检测不到这块硬盘。好在我一个半月前把磁盘全盘备份了一遍，可以把文件恢复之前的版本，但是会丢失近期的文件更改。送去专业维修是不可能的，为了90天的数据花费几百实在不划算。那么现在摆在我面前的路只剩一条，自己尝试维修硬盘。</p>
+<h2 id="首轮诊断-维修"><a href="#首轮诊断-维修" class="headerlink" title="首轮诊断 + 维修"></a>首轮诊断 + 维修</h2><p>那诊断磁盘的第一步肯定是听声音、检查磁盘。上电后电机启转正常，紧接着磁头移动开始读取数据，有时候似乎有刮盘的声音，但是不能确定。再把电路板拆下载仔细观察，元件没有损坏，但是触点有些黑，可能是接触不良导致的？</p>
+<p>接下来就是下饭操作了，我爸拿来了砂纸，让我把触点打磨一下试试。要知道电路板上布满各种导线和元器件，一不小心把线磨断或者是把哪个零件铲飞，问题就会变得更加复杂。当时我比较着急，也不顾上这么多了。小心翼翼把触点打磨好，再次启动硬盘，故障依旧orz。(后来才知道清理触点用橡皮擦就可以了)</p>
+<h2 id="再次诊断-维修"><a href="#再次诊断-维修" class="headerlink" title="再次诊断 + 维修"></a>再次诊断 + 维修</h2><p>凭借以往的经验已经不能解决问题，接下来上网搜索试试。许多人说这个是希捷固件门问题，需要到希捷F3里清除<code>S.M.A.R.T.</code>和G表。</p>
+<p>希捷的指令口其实就是个TTL串口，需要一个USB-TTL的设备，那研究下来有三款芯片</p>
+<ul>
+<li>FT232   成品售价约28元</li>
+<li>CP2102  成品售价约8元</li>
+<li>CH340   成品售价约5元</li>
+</ul>
+<p>CH340是国产芯片所以比较便宜，但是其他芯片要注意别买到假货。</p>
+<p>在淘宝上买好USB-TTL的设备，准备再次进行维修。这里还有个小插曲，我当时没注意指令口的排插比一般的要小，结果要修的时候杜邦线插不进去，那我就想了个办法，把杜邦头的塑料壳都去掉，用尖嘴钳压小一些，再裹上胶带防止短路，一个临时连接设备就做好了。(斜眼笑.jpg)</p>
+<p>按照教程上连接好线，启动磁盘，终端显示<code>LED:00000047</code>并陷入死循环，无法进入F3维修。唉，维修硬盘真是困难重重，刚感觉有点希望，又一次跌入未知领域。</p>
+<h2 id="最后诊断-维修"><a href="#最后诊断-维修" class="headerlink" title="最后诊断 + 维修"></a>最后诊断 + 维修</h2><p>搜索错误代码得知是固件损坏，看到一篇贴子上说要短接磁头触点。我大概看了一下，猜测反面的触点和正面的是连在一起的，打算短接试一下（见图）。<br><img src="/images/HDD_touchpoint_front.jpg" srcset="/img/loading.gif" lazyload alt="硬盘正面短接点"><br><img src="/images/HDD_touchpoint_back.jpg" srcset="/img/loading.gif" lazyload alt="磁盘反面短接点"><br>但是短接的时间很难把握，接早了会输出乱码，接晚了会没效果。在试了几十次后，终于成功了一次，我赶紧按照教程上的步骤修复硬盘。</p>
+<p>此时已经是凌晨两点，要是这都修不好，估计我也要放弃了。重新连接SATA线，开机，数据全部恢复。Nice!</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>只能说我当时非常幸运，这块盘并没有被我修好，它只是凑巧能运行。我在修好硬盘后尝试刷新固件发现会出错，接指令线读取固件也报错。可能是我在短接触点的时候进一步损坏了固件，正巧使得硬盘不会卡死在启动流程里。再后来<a href="https://patents.google.com/patent/CN105183578A/zh" target="_blank" rel="noopener">进一步搜索</a>得知，<code>LED:00000047</code>表示硬盘固件区被锁定，很有可能是MCMT损坏(MC对应Media Cache)。考虑到进一步维修的复杂程度，并且我需要的数据都已经恢复，我觉得这块硬盘已经没有维修价值了，本次硬盘维修经历止步于此。</p>
+<p>最后，我在这次维修中，一直在思考一个问题。硬盘维修真的很难吗？我个人觉得不应该这么难，主要还是硬盘制造厂商的闭源，和整个硬盘维修行业的闭源。就硬盘制造厂商而言，他们并不会在卖硬盘时附赠一本《维修手册》，只有厂商的员工会接受培训学习维修技术。上游的资料受限，那么下游能获取到的就很少。就行业方面，这个行业不受重视。硬盘并不容易坏，本来需求就少，如果自己不保留点技术，就难以在恶劣的竞争环境中生存。于是我们就看到全网提问的人很多，但是愿意提供解决方法的人很少，大部分的知识掌握在小部分人手中。就算是简单的故障，人们也不得不花费重金，求助于专业的硬盘维修机构。也许这就叫做利益相关吧，哈哈。(当然这边所讲的都是日常的数据，真正重要的数据还是应该找专业的人维修。)</p>
+<p>反观软件行业，开源的生态环境就做的很好，<a href="https://github.com/" target="_blank" rel="noopener">Github</a>、<a href="https://stackoverflow.com/" target="_blank" rel="noopener">StackOverflow</a>等等这些开源交流平台，使得整个软件行业绽放出勃勃生机。尽管困难重重，我依旧希望以后硬盘行业(尤其是硬盘制造厂商)也能变得开放起来。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A1%AC%E4%BB%B6/" class="category-chain-item">硬件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>希捷ST2000DM001硬盘维修</div>
+      <div>http://yoursite.com/2020/08/19/希捷ST2000DM001硬盘维修/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>xiaoshaoYC</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年8月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/30/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E9%85%8D%E7%BD%AEDNS/" title="记一次Ubuntu配置DNS">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">记一次Ubuntu配置DNS</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/01/Win10%E6%89%93%E5%BC%80Hyper-V%E5%AF%B9%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D/" title="Win10打开Hyper-V对性能的影响">
+                        <span class="hidden-mobile">Win10打开Hyper-V对性能的影响</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
