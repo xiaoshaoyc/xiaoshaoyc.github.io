@@ -24,7 +24,7 @@
 <meta property="og:description" content="背景前段时间从Oracle Cloud白嫖了一台Ampere A1的虚拟机，还把家里尘封许久的服务器搬出来组了个on-premise network。就想着能不能把这两个子网用VPN连接起来，组成一个大内网可以互相访问。但是我平时还要去学校上学，又是另一个网域，于是这个问题就变得稍显复杂——三个不同地区的内网要互相能够访问。 同学一开始给我推荐了Tailscale，这个软件的功能完全符合我的预期，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-02T08:52:48.000Z">
-<meta property="article:modified_time" content="2022-10-02T08:55:11.455Z">
+<meta property="article:modified_time" content="2022-10-03T07:33:32.113Z">
 <meta property="article:author" content="xiaoshaoYC">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -269,8 +269,8 @@
                 
                 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>前段时间从Oracle Cloud白嫖了一台Ampere A1的虚拟机，还把家里尘封许久的服务器搬出来组了个on-premise network。就想着能不能把这两个子网用VPN连接起来，组成一个大内网可以互相访问。但是我平时还要去学校上学，又是另一个网域，于是这个问题就变得稍显复杂——三个不同地区的内网要互相能够访问。</p>
 <p>同学一开始给我推荐了<code>Tailscale</code>，这个软件的功能完全符合我的预期，但是美中不足在于免费账号的限制比较严格，只允许1user，20个设备，和1个子网，而我这边有两个子网。</p>
-<p>之后又查到它的竞品<code>Twingate</code>，此产品允许两个subnet，而且默认部署为subnet的网关，操作比<code>Tailscale</code>更为简单。但是我还是有小小的一点不满意（捂脸），因为它免费版本只允许1台终端设备连接（可以简单的理解城在<code>Twingate</code>中是分server和client的，server作为网络入口和出口，client只作为网络入口）。而且说不定我以后会把腾讯云、GCP、AWS的机器并入内网，为了扩展性考虑我还是决定再做一些搜索。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/gsliepen/tinc"><code>Tinc</code></a>是我找到的第三个软件，免费开源，磁盘占用和运存占用都很小。它有点类似于p2p下载器（如迅雷）的感觉，在设备加入一个VPN网络后可以自动发现VPN网络中其他peer。但是试用了一下比较麻烦，还要安装TUN&#x2F;TAP驱动（写到这里突然想到SSTap，曾经是最好的翻墙软件，只可惜作者被警告了，长江后浪推前浪。。。）。另外<code>Tinc</code>最后的commit停留在了2021年，似乎是已经停止开发，感觉会跟不上现在技术迭代的速度。</p>
+<p>之后又查到它的竞品<code>Twingate</code>，此产品允许两个subnet，而且默认部署为subnet的网关，操作比<code>Tailscale</code>更为简单。但是我还是有小小的一点不满意（捂脸），因为它免费版本只允许1台终端设备连接（可以简单的理解成在<code>Twingate</code>中是分server和client的，server作为网络入口和出口，client只作为网络入口）。而且说不定我以后会把腾讯云、GCP、AWS的机器并入内网，为了扩展性考虑我还是决定再做一些搜索。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gsliepen/tinc"><code>Tinc</code></a>是我找到的第三个软件，免费开源，磁盘占用和运存占用都很小。它有点类似于p2p下载器（如迅雷）的感觉，在设备加入一个VPN网络后可以自动发现VPN网络中其他peer。但是试用了一下比较麻烦，还要安装TUN&#x2F;TAP驱动（写到这里突然想到SSTap，曾经是最好的游戏翻墙软件，只可惜作者被警告了，长江后浪推前浪。。。）。另外<code>Tinc</code>最后的commit停留在了2021年，似乎是已经停止开发，感觉会跟不上现在技术迭代的速度。</p>
 <p><code>Wireguard</code>+<a target="_blank" rel="noopener" href="https://github.com/k4yt3x/wg-meshconf"><code>wg-meshconf</code></a>也是一种解决方案，但是总的来说配置过于复杂而且维护起来不方便，每次添加新的子网都要手动更新所有子网的配置。<code>Wireguard</code>团队正在开发的<a target="_blank" rel="noopener" href="https://git.zx2c4.com/wg-dynamic/about/docs/idea.md"><code>wg-dynamic</code></a>是以上方案的代替产品，可以关注一下进展。</p>
 <p>此时我了解到，我要解决方案是一套类似于Mesh VPN的系统，于是做了一些更有针对性的搜索。<a target="_blank" rel="noopener" href="https://github.com/gravitl/netmaker/"><code>netmaker</code></a>是<strong>一个很有吸引力的方案，尤其是其宣传的5倍于<code>tailscale</code>的吞吐量</strong>。但是受限于其文档较少，配置较为繁琐，再加上我已经很累了，暂时先放一边。以后有机会可以再研究一下。</p>
 <p>最后，试着搜索能不能自建<code>Tailscale</code>或者<code>Twingate</code>的控制主机，结果还真被我找到了<a target="_blank" rel="noopener" href="https://github.com/juanfont/headscale"><code>Headscale</code></a>，开源免费的<code>Tailscale</code>主控替代品。按照官方的说法</p>

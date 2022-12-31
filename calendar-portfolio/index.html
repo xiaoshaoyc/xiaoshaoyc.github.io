@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="xiaoshaoYC">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Link to the projecthttps:&#x2F;&#x2F;rpi-smart-calendar.sycnb.work&#x2F; FeaturesUser Control User could login, logout, and register freely  Add&#x2F;Delete Event User could add&#x2F;delete event freely  Study Gro">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portfolio: RPI Smart Calendar">
+<meta property="og:url" content="https://xiaoshaoyc.github.io/calendar-portfolio/index.html">
+<meta property="og:site_name" content="越过山丘">
+<meta property="og:description" content="Link to the projecthttps:&#x2F;&#x2F;rpi-smart-calendar.sycnb.work&#x2F; FeaturesUser Control User could login, logout, and register freely  Add&#x2F;Delete Event User could add&#x2F;delete event freely  Study Gro">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaoshaoyc.github.io/images/Time-Master-Deployment-Diagram.png">
+<meta property="article:published_time" content="2022-12-31T07:45:31.000Z">
+<meta property="article:modified_time" content="2022-12-31T09:25:39.597Z">
+<meta property="article:author" content="xiaoshaoYC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://xiaoshaoyc.github.io/images/Time-Master-Deployment-Diagram.png">
+  
+  
+  
+  <title>Portfolio: RPI Smart Calendar - 越过山丘</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaoshaoyc.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"tajs":null},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Portfolio: RPI Smart Calendar"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <div class="markdown-body">
+
+<h1 id="Link-to-the-project"><a href="#Link-to-the-project" class="headerlink" title="Link to the project"></a>Link to the project</h1><p><a target="_blank" rel="noopener" href="https://rpi-smart-calendar.sycnb.work/">https://rpi-smart-calendar.sycnb.work/</a></p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h4 id="User-Control"><a href="#User-Control" class="headerlink" title="User Control"></a>User Control</h4><ul>
+<li>User could login, logout, and register freely</li>
+</ul>
+<h4 id="Add-x2F-Delete-Event"><a href="#Add-x2F-Delete-Event" class="headerlink" title="Add&#x2F;Delete Event"></a>Add&#x2F;Delete Event</h4><ul>
+<li>User could add&#x2F;delete event freely</li>
+</ul>
+<h4 id="Study-Group"><a href="#Study-Group" class="headerlink" title="Study Group"></a>Study Group</h4><ul>
+<li>Students taken in the same courses are assigned to a study group</li>
+<li>They could communicate about the course inside the study group</li>
+</ul>
+<h4 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h4><ul>
+<li>Charts indicating average time students spent each week are avaiable</li>
+<li>Students could also see avergae time  they spent on each course</li>
+</ul>
+<h4 id="Assignment-Time-Prediction"><a href="#Assignment-Time-Prediction" class="headerlink" title="Assignment Time Prediction"></a>Assignment Time Prediction</h4><ul>
+<li>Time on future assignments is predicted using machine learning model</li>
+<li>Students could then schedule their time based upon predicted time</li>
+</ul>
+<h2 id="Frontend"><a href="#Frontend" class="headerlink" title="Frontend"></a>Frontend</h2><ul>
+<li>Design pattern: <code>Composite</code></li>
+<li>Technologies<ul>
+<li><code>React.js</code> - JavaScript library for building reactive user interface</li>
+<li><code>Ajax</code> - Asynchronous JavaScript and XML</li>
+</ul>
+</li>
+</ul>
+<h2 id="Backend"><a href="#Backend" class="headerlink" title="Backend"></a>Backend</h2><ul>
+<li>Design pattern: <code>MVC</code></li>
+<li>Technologies<ul>
+<li><code>Django</code> - Python-based comprehensive FOSS web framework</li>
+<li><code>Postgres</code> - Relational database system</li>
+</ul>
+</li>
+</ul>
+<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
+<li><p>Feature Selection</p>
+<ul>
+<li>Select variables: DueDate, Group, and User, ActualTime</li>
+<li>Normalized data</li>
+</ul>
+</li>
+<li><p>Algorithm: logistic regression with LASSO</p>
+</li>
+</ul>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p><img src="/images/Time-Master-Deployment-Diagram.png" srcset="/img/loading.gif" lazyload alt="RPI Smart Calendar Deployment Diagram"></p>
+<ul>
+<li>Technologies<ul>
+<li><code>docker</code></li>
+<li><code>docker-compose</code></li>
+</ul>
+</li>
+<li>Features<ul>
+<li>Easy installation</li>
+<li>Unify all the config in one file</li>
+<li>persist data storage</li>
+<li>system guard and auto restart</li>
+</ul>
+</li>
+</ul>
+<h1 id="Retrospection"><a href="#Retrospection" class="headerlink" title="Retrospection"></a>Retrospection</h1><p>This is a group project. I did most of the work related to coding and documenting, including the overall architecture, the deployment part, the html and javascript parts of the frontend, the majority of the backend, the schema of the database, and the API design for communicating between frontend and backend. To sharpen my skills in React and Django, I did not use any template code and wrote all the codes from scratch.</p>
+<p>In retrospect of the project, there are several points that can be improved:</p>
+<h3 id="State-Management"><a href="#State-Management" class="headerlink" title="State Management"></a>State Management</h3><p>To synchronize the changes in different components in the frontend, I had to elevate and aggregate the statuses to parent components. This leads to complex coupling between various components, and the difficulty for maintaince. To address this issue, I may use status management frameworks such as <code>Redux.js</code> in future projects.</p>
+<h3 id="Communication-Protocal"><a href="#Communication-Protocal" class="headerlink" title="Communication Protocal"></a>Communication Protocal</h3><p>I utilized the javascript build-in <code>XMLHttpRequest</code> for data transferring between frontend and backend. However, I later realized that our implementation is hard to maintain. For future projects, I may adopt some API framework such as <code>GraphQL</code> that is understandable, predictable, and maintainable.</p>
+<h3 id="Intuitive-Unified-and-Elegant-UI-Design"><a href="#Intuitive-Unified-and-Elegant-UI-Design" class="headerlink" title="Intuitive, Unified, and Elegant UI Design"></a>Intuitive, Unified, and Elegant UI Design</h3><p>We didn’t develop a solid consensus for the UI design. Since everyone participates in some parts of the CSS, our CSS reflects our different aesthetic senses. For future projects, we can document the UI design and create a demo UI before coding. We may also use some element-wise templates such as <code>Bootstrap</code>, <code>BULMA</code>, and <code>Animate.css</code>.</p>
+</div>
+
+  
+
+</article>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
